@@ -4,13 +4,13 @@
 
 vi /etc/config/overwall
 
-修改 config servers 'cf'
+修改文件加入‘cf’, 目的是找到ip后直接修改配置。 config servers 'cf' 
 
 vi cdnspeedtest.sh 参照下面bash，运行 bash cdnspeedtest.sh， 只要设置一个每天凌晨的计划任务自动更新ip就行，完全不用人工去找ip了。
 
 运行需要的 ip.txt 在这 https://github.com/XIU2/CloudflareSpeedTest
 
-
+```
 #!/bin/bash
 
 /etc/init.d/overwall stop
@@ -23,4 +23,4 @@ uci commit overwall
 /etc/init.d/overwall restart
 
 
-
+```
